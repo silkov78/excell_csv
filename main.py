@@ -63,7 +63,7 @@ for file in excell_files:
     try:
         pd_file_df_date = pd.to_datetime(file_df_date)
         year = str(pd_file_df_date.year)[-2:]
-        month = str(pd_file_df_date.month)
+        month = str(pd_file_df_date.month).zfill(2)
     except pd._libs.tslibs.parsing.DateParseError:
         print(f'ОШИБКА: в первой строке файла {file} дата представлена в непонятном формате: {file_df_date} .')
         continue
